@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 0.1.1
 type: plugin
 author: bdim
 name: zhipuai_web_search
@@ -10,6 +10,11 @@ description:
   en_US: Web search tool powered by ZhipuAI API with advanced filtering and content control
   zh_Hans: 基于智谱AI API的网页搜索工具，支持高级过滤和内容控制
   pt_BR: Ferramenta de pesquisa web alimentada pela API ZhipuAI com filtragem avançada e controle de conteúdo
+tags:
+  - search
+  - web-search
+  - zhipuai
+  - tool
 icon: icon.svg
 resource:
   memory: 268435456
