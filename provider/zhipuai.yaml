@@ -1,0 +1,34 @@
+identity:
+  author: bdim
+  name: zhipuai
+  label:
+    en_US: ZhipuAI Web Search
+    zh_Hans: 智谱AI网页搜索
+    pt_BR: Pesquisa Web ZhipuAI
+  description:
+    en_US: Web search tool powered by ZhipuAI API with advanced filtering and content control
+    zh_Hans: 基于智谱AI API的网页搜索工具，支持高级过滤和内容控制
+    pt_BR: Ferramenta de pesquisa web alimentada pela API ZhipuAI com filtragem avançada e controle de conteúdo
+  icon: icon.svg
+credentials_for_provider:
+  zhipuai_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: ZhipuAI API Key
+      zh_Hans: 智谱AI API密钥
+      pt_BR: Chave API ZhipuAI
+    placeholder:
+      en_US: Please input your ZhipuAI API Key
+      zh_Hans: 请输入您的智谱AI API密钥
+      pt_BR: Por favor, insira sua chave API ZhipuAI
+    help:
+      en_US: Get your ZhipuAI API key from https://open.bigmodel.cn
+      zh_Hans: 从 https://open.bigmodel.cn 获取您的智谱AI API密钥
+      pt_BR: Obtenha sua chave API ZhipuAI em https://open.bigmodel.cn
+    url: https://open.bigmodel.cn
+tools:
+  - tools/web_search.yaml
+extra:
+  python:
+    source: provider/zhipuai.py

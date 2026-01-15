@@ -1,0 +1,31 @@
+version: 0.1.0
+type: plugin
+author: bdim
+name: zhipuai_web_search
+label:
+  en_US: ZhipuAI Web Search
+  zh_Hans: 智谱AI网页搜索
+  pt_BR: Pesquisa Web ZhipuAI
+description:
+  en_US: Web search tool powered by ZhipuAI API with advanced filtering and content control
+  zh_Hans: 基于智谱AI API的网页搜索工具，支持高级过滤和内容控制
+  pt_BR: Ferramenta de pesquisa web alimentada pela API ZhipuAI com filtragem avançada e controle de conteúdo
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/zhipuai.yaml
+meta:
+  version: 0.1.0
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-01-15T00:00:00.00000000+08:00
+verified: false

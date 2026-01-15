@@ -1,0 +1,143 @@
+identity:
+  name: zhipuai_web_search
+  author: bdim
+  label:
+    en_US: Web Search
+    zh_Hans: 网页搜索
+    pt_BR: Pesquisa Web
+description:
+  human:
+    en_US: Search the web using ZhipuAI's web search API with advanced filtering options
+    zh_Hans: 使用智谱AI网页搜索API进行网络搜索，支持高级过滤选项
+    pt_BR: Pesquise na web usando a API de pesquisa web do ZhipuAI com opções avançadas de filtragem
+  llm: A powerful web search tool powered by ZhipuAI API that searches the web and returns relevant results with summaries, URLs, publication dates, and site information. Supports domain filtering, date range filtering, and content size control for precise search results.
+parameters:
+  - name: search_query
+    type: string
+    required: true
+    label:
+      en_US: Search Query
+      zh_Hans: 搜索查询
+      pt_BR: Consulta de Pesquisa
+    human_description:
+      en_US: The search query or question
+      zh_Hans: 搜索查询或问题
+      pt_BR: A consulta ou pergunta de pesquisa
+    llm_description: The search terms or question to be processed. Use clear and specific queries for best results.
+    form: llm
+  - name: search_engine
+    type: string
+    required: false
+    default: search_pro
+    label:
+      en_US: Search Engine
+      zh_Hans: 搜索引擎
+      pt_BR: Motor de Busca
+    human_description:
+      en_US: Search engine to use (default is search_pro)
+      zh_Hans: 使用的搜索引擎（默认为search_pro）
+      pt_BR: Motor de busca a usar (padrão é search_pro)
+    llm_description: Specifies which search engine to use. Default is "search_pro" for best results.
+    form: form
+  - name: count
+    type: number
+    required: false
+    default: 10
+    min: 1
+    max: 50
+    label:
+      en_US: Result Count
+      zh_Hans: 结果数量
+      pt_BR: Contagem de Resultados
+    human_description:
+      en_US: Number of search results to return (1-50, default 10)
+      zh_Hans: 返回的搜索结果数量（1-50，默认10）
+      pt_BR: Número de resultados de pesquisa a retornar (1-50, padrão 10)
+    llm_description: The number of search results to return, ranging from 1 to 50. Default is 10.
+    form: form
+  - name: search_domain_filter
+    type: string
+    required: false
+    label:
+      en_US: Domain Filter
+      zh_Hans: 域名过滤
+      pt_BR: Filtro de Domínio
+    human_description:
+      en_US: Only access content from specified domain (e.g., www.example.com)
+      zh_Hans: 仅访问指定域名的内容（例如：www.example.com）
+      pt_BR: Acessar apenas conteúdo do domínio especificado (por exemplo, www.example.com)
+    llm_description: Restrict search results to a specific domain. Example "www.sohu.com"
+    form: llm
+  - name: search_recency_filter
+    type: select
+    required: false
+    default: noLimit
+    label:
+      en_US: Recency Filter
+      zh_Hans: 时间过滤
+      pt_BR: Filtro de Recência
+    human_description:
+      en_US: Filter search results by date range
+      zh_Hans: 按日期范围过滤搜索结果
+      pt_BR: Filtrar resultados de pesquisa por intervalo de datas
+    llm_description: Constrains results to specific time periods. Options include "noLimit", "day", "week", "month", "year"
+    options:
+      - label:
+          en_US: No Limit
+          zh_Hans: 无限制
+          pt_BR: Sem Limite
+        value: noLimit
+      - label:
+          en_US: Past Day
+          zh_Hans: 过去一天
+          pt_BR: Último Dia
+        value: day
+      - label:
+          en_US: Past Week
+          zh_Hans: 过去一周
+          pt_BR: Última Semana
+        value: week
+      - label:
+          en_US: Past Month
+          zh_Hans: 过去一个月
+          pt_BR: Último Mês
+        value: month
+      - label:
+          en_US: Past Year
+          zh_Hans: 过去一年
+          pt_BR: Último Ano
+        value: year
+    form: form
+  - name: content_size
+    type: select
+    required: false
+    default: medium
+    label:
+      en_US: Content Size
+      zh_Hans: 内容大小
+      pt_BR: Tamanho do Conteúdo
+    human_description:
+      en_US: Control the length of returned summaries
+      zh_Hans: 控制返回摘要的长度
+      pt_BR: Controlar o comprimento dos resumos retornados
+    llm_description: Controls the length of web page summaries returned. Options are "low", "medium", "high"
+    options:
+      - label:
+          en_US: Low
+          zh_Hans: 简短
+          pt_BR: Baixo
+        value: low
+      - label:
+          en_US: Medium
+          zh_Hans: 中等
+          pt_BR: Médio
+        value: medium
+      - label:
+          en_US: High
+          zh_Hans: 详细
+          pt_BR: Alto
+        value: high
+    form: form
+extra:
+  python:
+    source: tools/web_search.py
