@@ -12,9 +12,6 @@ description:
   pt_BR: Ferramenta de pesquisa web alimentada pela API ZhipuAI com filtragem avançada e controle de conteúdo
 tags:
   - search
-  - web-search
-  - zhipuai
-  - tool
 icon: icon.svg
 resource:
   memory: 268435456
