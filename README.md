@@ -84,5 +84,5 @@ You can call this plugin in Dify workflows or elsewhere. Simply provide your sea
 ## Author
 
 **Author:** bdim 
-**Version:** 0.1.0 
+**Version:** 0.1.1 
 **Type:** tool

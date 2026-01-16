@@ -84,5 +84,5 @@ dify-plugin-daemon plugin package ./zhipuai-web-search-dify-plugin
 ## 作者
 
 **作者：** bdim 
-**版本：** 0.1.0 
+**版本：** 0.1.1 
 **类型：** 工具 
